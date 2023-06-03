@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
 
     'paypal.standard.ipn',
+
+    'django_seed',
 ]
 
 AUTHENTICATION_BACKENDS = [
