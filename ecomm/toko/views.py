@@ -13,7 +13,7 @@ from .models import ProdukItem, OrderProdukItem, Order, AlamatPengiriman, Paymen
 
 class HomeListView(generic.ListView):
     template_name = 'home.html'
-    paginate_by = 4
+    paginate_by = 12
      
     def get_queryset(self):
         category = self.request.GET.get('category')
