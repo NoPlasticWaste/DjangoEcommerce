@@ -26,7 +26,7 @@ PILIHAN_PEMBAYARAN = (
 User = get_user_model()
 
 class ProdukItem(models.Model):
-    nama_produk = models.CharField(max_length=100)
+    nama_produk = models.CharField(max_length=10)
     harga = models.FloatField()
     harga_diskon = models.FloatField(blank=True, null=True)
     slug = models.SlugField(unique=True)
@@ -109,9 +109,9 @@ class Order(models.Model):
 
 class AlamatPengiriman(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    alamat_1 = models.CharField(max_length=100)
-    alamat_2 = models.CharField(max_length=100)
-    negara = models.CharField(max_length=100)
+    alamat_1 = models.CharField(max_length=50)
+    alamat_2 = models.CharField(max_length=50)
+    negara = models.CharField(max_length=20)
     kode_pos = models.CharField(max_length=20)
 
     def __str__(self):
