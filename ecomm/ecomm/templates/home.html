@@ -4,6 +4,20 @@
 
 {% include 'carousel.html' %}
 
+<style>
+  .image-container {
+      width: 300px; /* Sesuaikan dengan lebar yang diinginkan */
+      height: 200px; /* Sesuaikan dengan tinggi yang diinginkan */
+      overflow: hidden; /* Menghilangkan konten gambar yang melebihi ukuran container */
+  }
+
+  .image-container img {
+      width: 100%; /* Menyesuaikan lebar gambar dengan lebar container */
+      height: 100%; /* Menyesuaikan tinggi gambar dengan tinggi container */
+      object-fit: cover; /* Memastikan gambar mengisi seluruh area container dengan mempertahankan proporsi aspek */
+  }
+</style>
+
 <!--Main layout-->
 <main>
     <div class="container">
@@ -72,7 +86,8 @@
                         class="w-100" />
                       <a href="{{ pItem.get_absolute_url }}"> 
                         <div class="mask">
-                          <div class="d-flex justify-content-start align-items-end h-100">
+                          <div class="image-container">
+                            <img src="nama-gambar.jpg" alt="Deskripsi gambar">
                             <h5><span class="badge bg-{{ pItem.get_label_display }} ms-2">{{ pItem.label }}</span></h5>
                           </div>
                         </div>
