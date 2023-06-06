@@ -7,7 +7,6 @@ from django.utils import timezone
 from django.views import generic
 from paypal.standard.forms import PayPalPaymentsForm
 
-
 from .forms import CheckoutForm
 from .models import ProdukItem, OrderProdukItem, Order, AlamatPengiriman, Payment, PILIHAN_KATEGORI
 
@@ -306,3 +305,4 @@ def add_item_order_summary(request, slug):
             pesan = f"Produk Item berhasil ditambah"
             messages.info(request, pesan)
             return redirect('toko:order-summary')
+

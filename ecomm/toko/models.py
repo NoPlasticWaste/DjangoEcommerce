@@ -2,6 +2,7 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 PILIHAN_KATEGORI = (
     ('S', 'Shirt'),
@@ -135,3 +136,11 @@ class Payment(models.Model):
     
     class Meta:
         verbose_name_plural = 'Payment'
+
+
+class Review(models.Model):
+    product = models.ForeignKey(ProdukItem, related_name='reviews', on_delete=models.CASCADE)
+    rating = models.IntegerField(default=5)
+    content = models.TextField()
+    created_by = models.ForeignKey(User, related_name='reviews', on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
